@@ -9,7 +9,9 @@ jobs:
           - uses: actions/setup-python@v2
             with:
               python-version: 3.8
-          - uses: actions/checkout@v1
+          - uses: actions/checkout@v2
+          - name: Show working directory content
+            run: dir
           - name: Install packages
             run:  pip install -r "pythoncode/requirements.txt"
           - name: Create basic spec file for FortiusANT
