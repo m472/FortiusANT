@@ -15,7 +15,7 @@ jobs:
           - name: Show files in current dir
             run: |
               dir
-              cd
+              cd pythoncode
               dir
             shell: cmd
           - name: Create basic spec file for FortiusANT
