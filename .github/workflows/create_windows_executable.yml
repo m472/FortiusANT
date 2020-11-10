@@ -18,10 +18,10 @@ jobs:
             shell: cmd
           - name: Create basic spec file for FortiusANT
             run: |
-              "./pythoncode/FortiusANT Create basic spec file.bat"
+              call ".\pythoncode\FortiusANT Create basic spec file.bat"
             shell: cmd
           - name: Build FortiusANT
             run: |
-              "./pythoncode/FortiusANT CreateWindowsExecutable.bat"
+              call ".\pythoncode\FortiusANT CreateWindowsExecutable.bat"
             shell: cmd
 
