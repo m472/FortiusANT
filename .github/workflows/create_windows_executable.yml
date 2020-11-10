@@ -28,8 +28,7 @@ jobs:
 
           - name: Show files in C:\Windows\System32\
             run: |
-              cd C:\Windows\System32\
-              dir
+              dir C:\Windows\System32\
             shell: cmd
 
           - name: Create basic spec file for FortiusANT
