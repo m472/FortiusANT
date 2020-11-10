@@ -13,7 +13,9 @@ jobs:
           - name: Install packages
             run:  pip install -r "pythoncode/requirements.txt"
           - name: Create basic spec file for FortiusANT
-            run: & "pythoncode\\FortiusANT Create basic spec file.bat"
+            run: |
+              & "pythoncode\FortiusANT Create basic spec file.bat"
           - name: Build FortiusANT
-            run: & "pythoncode\\FortiusANT CreateWindowsExecutable.bat"
+            run: |
+              & "pythoncode\FortiusANT CreateWindowsExecutable.bat"
 
