@@ -24,7 +24,7 @@ jobs:
             if: steps.cache.outputs.cache-hit != 'true'
             run: |
               pip install -r "pythoncode/requirements.txt"
-              pip install pyinstaller pyinstaller-win pypiwin32
+              pip install pyinstaller pypiwin32
 
           - name: Show files in C:\Windows\System32\
             run: |
