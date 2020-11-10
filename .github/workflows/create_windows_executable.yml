@@ -12,10 +12,12 @@ jobs:
           - uses: actions/checkout@v2
           - name: Install packages
             run:  pip install -r "pythoncode/requirements.txt"
+          - name: Change into pythoncode directory
+            run: cd pythoncode
           - name: Create basic spec file for FortiusANT
             run: |
-              & ".\pythoncode\FortiusANT Create basic spec file.bat"
+              & "./FortiusANT Create basic spec file.bat"
           - name: Build FortiusANT
             run: |
-              & ".\pythoncode\FortiusANT CreateWindowsExecutable.bat"
+              & "./FortiusANT CreateWindowsExecutable.bat"
 
