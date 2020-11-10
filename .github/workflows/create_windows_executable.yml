@@ -20,6 +20,7 @@ jobs:
             shell: cmd
           - name: Create basic spec file for FortiusANT
             run: |
+              dir
               call "FortiusANT Create basic spec file.bat"
             shell: cmd
           - name: Build FortiusANT
