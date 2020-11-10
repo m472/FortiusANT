@@ -31,14 +31,13 @@ jobs:
 
           - name: Create basic spec file for FortiusANT
             run: |
-              cd pythoncode
-              dir
+              cd Development
               call "FortiusANT Create basic spec file.bat"
             shell: cmd
 
           - name: Build FortiusANT
             run: |
-              cd pythoncode
+              cd Development
               call "FortiusANT CreateWindowsExecutable.bat"
             shell: cmd
 
