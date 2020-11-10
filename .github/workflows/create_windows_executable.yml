@@ -10,12 +10,10 @@ jobs:
             with:
               python-version: 3.8
           - uses: actions/checkout@v2
-          - name: Show working directory content
-            run: dir
           - name: Install packages
             run:  pip install -r "pythoncode/requirements.txt"
           - name: Create basic spec file for FortiusANT
-            run: start "pythoncode\\FortiusANT Create basic spec file.bat"
+            run: & "pythoncode\\FortiusANT Create basic spec file.bat"
           - name: Build FortiusANT
-            run: start "pythoncode\\FortiusANT CreateWindowsExecutable.bat"
+            run: & "pythoncode\\FortiusANT CreateWindowsExecutable.bat"
 
