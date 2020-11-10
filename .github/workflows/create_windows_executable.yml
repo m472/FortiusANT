@@ -15,13 +15,15 @@ jobs:
           - name: Show files in current dir
             run: |
               dir
+              cd
+              dir
             shell: cmd
           - name: Create basic spec file for FortiusANT
             run: |
-              call ".\pythoncode\FortiusANT Create basic spec file.bat"
+              call "FortiusANT Create basic spec file.bat"
             shell: cmd
           - name: Build FortiusANT
             run: |
-              call ".\pythoncode\FortiusANT CreateWindowsExecutable.bat"
+              call "FortiusANT CreateWindowsExecutable.bat"
             shell: cmd
 
