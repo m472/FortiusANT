@@ -26,6 +26,9 @@ jobs:
               pip install -r "pythoncode/requirements.txt"
               pip install pyinstaller pypiwin32
 
+          - name: Install USB drivers
+            run: choco install zadig
+
           - name: Show files in C:\Windows\System32\
             run: |
               dir C:\Windows\System32\
