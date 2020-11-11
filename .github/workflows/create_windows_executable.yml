@@ -40,9 +40,7 @@ jobs:
               choco install wget unzip
               wget https://vorboss.dl.sourceforge.net/project/libusb-win32/libusb-win32-releases/1.2.6.0/libusb-win32-bin-1.2.6.0.zip
               unzip libusb-win32-bin-1.2.6.0.zip
-              dir
               move libusb-win32-bin-1.2.6.0\bin\amd64\libusb0.dll C:\Windows\System32\libusb0.dll
-              dir C:\Windows\System32\
             shell: cmd
 
           - name: Create basic spec file for FortiusANT
@@ -56,4 +54,10 @@ jobs:
               cd Development
               call "FortiusANT CreateWindowsExecutable.bat"
             shell: cmd
+
+          - name: Upload FortiusANT.exe
+            uses: actions/upload-artifact@v2
+              with:
+                name: FortiusANT.exe
+                path: pythoncode\dist\FortiusANT.exe
 
