@@ -57,6 +57,6 @@ jobs:
 
           - uses: actions/upload-artifact@v2
               with:
-                name: FortiusANT
+                name: my-artifact
                 path: pythoncode\dist\FortiusANT.exe
 
