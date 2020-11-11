@@ -37,6 +37,14 @@ jobs:
               restore-keys: |
                 libusb
 
+          - name: Debug
+            run: |
+              dir
+              cd pythoncode
+              dir
+              cd dist
+              dir
+
           - name: Download, unzip and move libusb0.dll to C:\Windows\System32
             if: steps.cache_libusb.outputs.cache-hit != 'true'
             run: |
