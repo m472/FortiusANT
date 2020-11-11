@@ -31,8 +31,8 @@ jobs:
 
           - name: Download, unzip and move libusb0.dll to C:\Windows\System32
             run: |
-              wget -o libusb-win.zip https://vorboss.dl.sourceforge.net/project/libusb-win32/libusb-win32-releases/1.2.6.0/libusb-win32-bin-1.2.6.0.zip
-              unzip libusb-win.zip
+              wget https://vorboss.dl.sourceforge.net/project/libusb-win32/libusb-win32-releases/1.2.6.0/libusb-win32-bin-1.2.6.0.zip
+              unzip libusb-win32-bin-1.2.6.0.zip
               dir
             shell: cmd
 
