@@ -26,15 +26,23 @@ jobs:
               pip install -r "pythoncode/requirements.txt"
               pip install pyinstaller pypiwin32
 
-          - name: Install tools
-            run: choco install wget unzip
+          - uses: actions/cache@v2
+            id: cache
+            with:
+              path: C:\Windows\System32\libusb0.dll
+              key: libusb
+              restore-keys: |
+                libusb
 
           - name: Download, unzip and move libusb0.dll to C:\Windows\System32
+            if: steps.cache_libusb.outputs.cache-hit != 'true'
             run: |
+              choco install wget unzip
               wget https://vorboss.dl.sourceforge.net/project/libusb-win32/libusb-win32-releases/1.2.6.0/libusb-win32-bin-1.2.6.0.zip
               unzip libusb-win32-bin-1.2.6.0.zip
               dir
               move libusb-win32-bin-1.2.6.0/bin/amd64/libusb0.dll C:\Windows\System32\
+              dir C:\Windows\System32\
             shell: cmd
 
           - name: Create basic spec file for FortiusANT
