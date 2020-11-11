@@ -37,14 +37,6 @@ jobs:
               restore-keys: |
                 libusb
 
-          - name: Debug
-            run: |
-              dir
-              cd pythoncode
-              dir
-              cd dist
-              dir
-
           - name: Download, unzip and move libusb0.dll to C:\Windows\System32
             if: steps.cache_libusb.outputs.cache-hit != 'true'
             run: |
@@ -65,6 +57,14 @@ jobs:
               cd Development
               call "FortiusANT CreateWindowsExecutable.bat"
             shell: cmd
+
+          - name: Debug
+            run: |
+              dir
+              cd pythoncode
+              dir
+              cd dist
+              dir
 
           - uses: actions/upload-artifact@v2
             with:
