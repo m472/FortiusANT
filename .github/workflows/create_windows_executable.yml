@@ -56,7 +56,7 @@ jobs:
             shell: cmd
 
           - uses: actions/upload-artifact@v2
-              with:
-                name: my-artifact
-                path: pythoncode\dist\FortiusANT.exe
+            with:
+              name: my-artifact
+              path: pythoncode\dist\FortiusANT.exe
 
