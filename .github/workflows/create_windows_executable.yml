@@ -26,12 +26,14 @@ jobs:
               pip install -r "pythoncode/requirements.txt"
               pip install pyinstaller pypiwin32
 
-          - name: Install USB drivers
-            run: choco install zadig
+          - name: Install tools
+            run: choco install wget unzip
 
-          - name: Show files in C:\Windows\System32\
+          - name: Download, unzip and move libusb0.dll to C:\Windows\System32
             run: |
-              dir C:\Windows\System32\
+              wget -o libusb-win.zip https://vorboss.dl.sourceforge.net/project/libusb-win32/libusb-win32-releases/1.2.6.0/libusb-win32-bin-1.2.6.0.zip
+              unzip libusb-win.zip
+              dir
             shell: cmd
 
           - name: Create basic spec file for FortiusANT
