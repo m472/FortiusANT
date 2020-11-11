@@ -55,9 +55,8 @@ jobs:
               call "FortiusANT CreateWindowsExecutable.bat"
             shell: cmd
 
-          - name: Upload FortiusANT.exe
-            uses: actions/upload-artifact@v2
+          - uses: actions/upload-artifact@v2
               with:
-                name: FortiusANT.exe
+                name: FortiusANT
                 path: pythoncode\dist\FortiusANT.exe
 
