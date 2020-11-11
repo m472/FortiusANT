@@ -24,6 +24,9 @@ jobs:
             if: steps.cache.outputs.cache-hit != 'true'
             run: |
               pip install -r "pythoncode/requirements.txt"
+
+          - name: Install pyinstaller
+            run: |
               pip install pyinstaller pypiwin32
 
           - uses: actions/cache@v2
