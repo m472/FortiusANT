@@ -65,6 +65,6 @@ jobs:
 
           - name: Test executable
             run: |
-                cd WindowsExecutable
-                FortiusANT.exe
+              cd WindowsExecutable
+              Start-Process -FilePath "FortiusANT.exe"
 
