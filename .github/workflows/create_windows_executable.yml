@@ -16,7 +16,7 @@ jobs:
             id: cache
             with:
               path: ~\AppData\Local\pip\Cache
-              key: ${{ runner.os }}-${{ python --version }}-pip-${{ hashFiles('**/requirements.txt') }}
+              key: ${{ runner.os }}-${{ python-version }}-pip-${{ hashFiles('**/requirements.txt') }}
               restore-keys: |
                 ${{ runner.os }}-pip-
 
