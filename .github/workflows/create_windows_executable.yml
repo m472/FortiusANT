@@ -63,3 +63,8 @@ jobs:
               name: my-artifact
               path: WindowsExecutable/FortiusANT.exe
 
+          - name: Test executable
+            run: |
+                cd WindowsExecutable
+                FortiusANT.exe
+
