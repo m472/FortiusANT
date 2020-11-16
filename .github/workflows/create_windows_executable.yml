@@ -67,6 +67,7 @@ jobs:
             shell: cmd
             run: |
               cd WindowsExecutable
-              start /wait "FortiusANT.exe"
+              start /B /wait "FortiusANT.exe" --help > output.txt
+              type output.txt
               exit %ERRORLEVEL%
 
