@@ -60,7 +60,7 @@ jobs:
 
           - uses: actions/upload-artifact@v2
             with:
-              name: my-artifact
+              name: FortiusANT-executable
               path: WindowsExecutable/FortiusANT.exe
 
           - name: Test executable
@@ -70,4 +70,9 @@ jobs:
               start /B /wait "FortiusANT.exe --help" > output.txt
               type output.txt
               exit %ERRORLEVEL%
+
+          - uses: actions/upload-artifact@v2
+            with:
+              name: output
+              path: WindowsExecutable output.txt
 
