@@ -60,11 +60,11 @@ jobs:
 
           - name: Debug
             run: |
+              git status
               dir
               cd pythoncode
               dir
-              cd dist
-              dir
+              dir dist
 
           - uses: actions/upload-artifact@v2
             with:
