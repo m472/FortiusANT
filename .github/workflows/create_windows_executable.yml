@@ -16,7 +16,7 @@ jobs:
             id: cache
             with:
               path: ~\AppData\Local\pip\Cache
-              key: ${{ runner.os }}-${{ runner.python-version }}-pip-${{ hashFiles('**/requirements.txt') }}
+              key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
               restore-keys: |
                 ${{ runner.os }}-pip-
 
@@ -58,16 +58,8 @@ jobs:
               call "FortiusANT CreateWindowsExecutable.bat"
             shell: cmd
 
-          - name: Debug
-            run: |
-              git status
-              dir
-              cd pythoncode
-              dir
-              dir dist
-
           - uses: actions/upload-artifact@v2
             with:
               name: my-artifact
-              path: pythoncode/
+              path: WindowsExecutable/FortiusANT.exe
 
